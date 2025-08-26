@@ -2,17 +2,23 @@
 
 [ext_resource type="Script" uid="uid://8utnw8xm88t3" path="res://Scripts/player.gd" id="1_rpqav"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbkls"]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbkls"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbkls"]
+radius = 3.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 10
 script = ExtResource("1_rpqav")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_qbkls")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 4.76837e-07)
+position = Vector2(0.25, -7.75)
 scale = Vector2(12.5, 12.5)
 texture = SubResource("PlaceholderTexture2D_qbkls")
+offset = Vector2(0, 0.0800002)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qbkls")

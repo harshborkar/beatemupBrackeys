@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm1k3eyim1de0"]
+[gd_scene load_steps=10 format=3 uid="uid://bm1k3eyim1de0"]
 
 [ext_resource type="Texture2D" uid="uid://dijcwln88i27f" path="res://icon.svg" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://c5an5wobf220v" path="res://Scripts/main.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://towt06ummgi3" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://bwsrbpnfqffvu" path="res://Scenes/Barrel.tscn" id="4_rgh2o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c1w88"]
 normal = Vector2(-0.0212718, 0.999774)
@@ -21,10 +22,13 @@ normal = Vector2(-0.0212718, 0.999774)
 size = Vector2(20, 119)
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_kln2b")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(2, -47)
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-2, 0)
@@ -42,6 +46,8 @@ texture = ExtResource("1_idj7w")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(2, -47)
+collision_layer = 2
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-2, 118)
@@ -60,8 +66,6 @@ position = Vector2(170, 28)
 scale = Vector2(0.5266, 0.446459)
 texture = ExtResource("1_idj7w")
 
-[node name="Player" parent="." instance=ExtResource("1_r150o")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5.425, 5.425)
 
@@ -71,3 +75,14 @@ zoom = Vector2(5.425, 5.425)
 position = Vector2(-98, 5.5)
 shape = SubResource("RectangleShape2D_kln2b")
 debug_color = Color(0.835294, 0, 0, 0.419608)
+
+[node name="Actors" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Actors" instance=ExtResource("1_r150o")]
+collision_layer = 2
+
+[node name="Barrel" parent="Actors" instance=ExtResource("4_rgh2o")]
+position = Vector2(34, 0)
+scale = Vector2(0.40625, 0.40625)
+collision_mask = 0
