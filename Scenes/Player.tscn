@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://towt06ummgi3"]
+[gd_scene load_steps=4 format=3 uid="uid://towt06ummgi3"]
+
+[ext_resource type="Script" uid="uid://8utnw8xm88t3" path="res://Scripts/player.gd" id="1_rpqav"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbkls"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbkls"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rpqav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qbkls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(12.5, 12.5)
+texture = SubResource("PlaceholderTexture2D_qbkls")
