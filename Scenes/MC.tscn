@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://biynfh7n3obul"]
+[gd_scene load_steps=11 format=3 uid="uid://biynfh7n3obul"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_ecr47"]
 [ext_resource type="Texture2D" uid="uid://lfc67v2yhf6p" path="res://Assets/Player/mcIDLEWalk-Sheet.png" id="2_bntvb"]
+[ext_resource type="Script" uid="uid://vqr33ybkmofx" path="res://Scripts/mc.gd" id="2_lyq4k"]
 
 [sub_resource type="Animation" id="Animation_lyq4k"]
 length = 0.001
@@ -122,7 +123,7 @@ size = Vector2(18, 15)
 
 [node name="BaseCharacter" instance=ExtResource("1_ecr47")]
 collision_mask = 10
-DAMAGE = 3
+script = ExtResource("2_lyq4k")
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -130,7 +131,6 @@ libraries = {
 }
 
 [node name="CharacterSprite" parent="." index="2"]
-modulate = Color(100, 100, 100, 1)
 use_parent_material = true
 position = Vector2(-8, -26)
 scale = Vector2(0.0423632, 0.0393372)
