@@ -1,72 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://biynfh7n3obul"]
+[gd_scene load_steps=14 format=3 uid="uid://biynfh7n3obul"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_ecr47"]
-[ext_resource type="Texture2D" uid="uid://lfc67v2yhf6p" path="res://Assets/Player/mcIDLEWalk-Sheet.png" id="2_bntvb"]
 [ext_resource type="Script" uid="uid://vqr33ybkmofx" path="res://Scripts/mc.gd" id="2_lyq4k"]
-
-[sub_resource type="Animation" id="Animation_lyq4k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DamageEmitter:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_ogp6k"]
-resource_name = "Walk"
-length = 0.333337
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
+[ext_resource type="Texture2D" uid="uid://bo4dbr1i85mgo" path="res://Assets/Player/Combined_Spritesheet2.png" id="3_ogp6k"]
+[ext_resource type="PackedScene" uid="uid://cbia2n51rdd7q" path="res://Scenes/enemy_slot.tscn" id="4_ogp6k"]
 
 [sub_resource type="Animation" id="Animation_unrri"]
 resource_name = "idle"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 0]
+"values": [Vector2i(0, 5), Vector2i(0, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_bntvb"]
 resource_name = "Punch"
 length = 0.333337
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -93,9 +50,82 @@ tracks/1/keys = {
 "method": &"on_action_completed"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterSprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lyq4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DamageEmitter:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterSprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_ogp6k"]
+resource_name = "Walk"
+length = 0.3728
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 6), Vector2i(1, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_i4aq3"]
+resource_name = "Hurt"
+length = 0.2325
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i4aq3"]
 _data = {
+&"Hurt": SubResource("Animation_i4aq3"),
 &"Idle": SubResource("Animation_unrri"),
 &"Punch": SubResource("Animation_bntvb"),
 &"RESET": SubResource("Animation_lyq4k"),
@@ -107,14 +137,16 @@ radius = 4.48557
 height = 26.6741
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecr47"]
-size = Vector2(18, 15)
+size = Vector2(14, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyq4k"]
 size = Vector2(6, 11)
 
-[node name="BaseCharacter" instance=ExtResource("1_ecr47")]
+[node name="MC" instance=ExtResource("1_ecr47")]
 collision_mask = 10
 script = ExtResource("2_lyq4k")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -125,11 +157,12 @@ libraries = {
 use_parent_material = true
 position = Vector2(-8, -26)
 scale = Vector2(0.0423632, 0.0393372)
-texture = ExtResource("2_bntvb")
+texture = ExtResource("3_ogp6k")
 centered = false
 offset = Vector2(10.312, -1)
-hframes = 2
-frame = 1
+hframes = 3
+vframes = 7
+frame = 15
 
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(-2.32831e-10, -2)
@@ -143,7 +176,7 @@ collision_mask = 96
 monitoring = false
 
 [node name="CollisionShape2D" parent="DamageEmitter" index="0"]
-position = Vector2(0, -18)
+position = Vector2(6, -20.5)
 shape = SubResource("RectangleShape2D_ecr47")
 debug_color = Color(0.96974, 0, 0.459364, 0.42)
 
@@ -152,8 +185,22 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="DamageReciever" index="0"]
-position = Vector2(-1, -17)
+position = Vector2(-1, -21)
 shape = SubResource("RectangleShape2D_lyq4k")
+
+[node name="EnemySlots" type="Node2D" parent="." index="6"]
+
+[node name="Enemy Slots" parent="EnemySlots" index="0" instance=ExtResource("4_ogp6k")]
+position = Vector2(16, -9)
+
+[node name="Enemy Slots2" parent="EnemySlots" index="1" instance=ExtResource("4_ogp6k")]
+position = Vector2(-15, -7)
+
+[node name="Enemy Slots3" parent="EnemySlots" index="2" instance=ExtResource("4_ogp6k")]
+position = Vector2(-14, 0)
+
+[node name="Enemy Slots4" parent="EnemySlots" index="3" instance=ExtResource("4_ogp6k")]
+position = Vector2(17, -1)
 
 [connection signal="area_entered" from="DamageEmitter" to="." method="_on_damage_emitter_area_entered"]
 

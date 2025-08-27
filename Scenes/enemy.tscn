@@ -4,6 +4,68 @@
 [ext_resource type="Texture2D" uid="uid://b61ncetr7782w" path="res://Assets/Enemy/with_outline/Combined_Spritesheet.png" id="2_1f0kj"]
 [ext_resource type="Script" uid="uid://6pwen3anoin6" path="res://Scripts/enemy.gd" id="2_afpow"]
 
+[sub_resource type="Animation" id="Animation_ghaa6"]
+resource_name = "Attack"
+length = 0.4895
+step = 0.33
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0420671, 0.101662, 0.185796, 0.273436, 0.350559),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.427682),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_action_completed"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1dp5w"]
+resource_name = "Hurt"
+length = 0.4595
+step = 0.33
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.119665, 0.218296, 0.322514),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_action_completed"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_afpow"]
 resource_name = "Idle"
 length = 0.714
@@ -54,54 +116,6 @@ tracks/0/keys = {
 "values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(3, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9), Vector2i(7, 9)]
 }
 
-[sub_resource type="Animation" id="Animation_ghaa6"]
-resource_name = "Attack"
-length = 0.4895
-step = 0.33
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0420671, 0.101662, 0.185796, 0.273436, 0.350559),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.427682),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"on_action_completed"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_1dp5w"]
-resource_name = "Hurt"
-length = 0.4595
-step = 0.33
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.119665, 0.218296, 0.322514),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dp5w"]
 _data = {
 &"Attack": SubResource("Animation_ghaa6"),
@@ -123,7 +137,7 @@ size = Vector2(11, 16)
 
 [node name="Enemy" instance=ExtResource("1_hghv2")]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 14
 script = ExtResource("2_afpow")
 SPEED = 50
 

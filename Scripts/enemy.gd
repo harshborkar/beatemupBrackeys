@@ -2,13 +2,24 @@ class_name Basic_Enemy
 extends Character
 
 @export var player:Player 
-
+var player_slot:EnemySlot= null
 
 
 
 func handle_input(_delta)->void:
-	if player!= null:
-		var direction:Vector2 = (player.position-position).normalized()
-		velocity = SPEED*direction
-	
+	if player!= null and can_move():
+		if player_slot==null:
+			player_slot=player.reserve_slot(self)
+			
+		if player_slot!=null:
+			var direction:Vector2 = (player_slot.global_position-global_position).normalized()
+			if (player_slot.global_position-global_position).length()<1:
+				velocity = Vector2.ZERO
+			else:
+				velocity = SPEED*direction
+func on_recieve_damage(damage:int, direction:Vector2):
+	super.on_recieve_damage(damage, direction)
+	if current_health==0:
+		player.free_slot(self)
+		
 	
