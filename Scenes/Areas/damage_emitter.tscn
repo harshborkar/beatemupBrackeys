@@ -5,3 +5,4 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.923635, 0.212045, 0.451024, 0.42)

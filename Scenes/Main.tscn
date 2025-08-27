@@ -80,13 +80,16 @@ debug_color = Color(0.835294, 0, 0, 0.419608)
 [node name="Actors" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Enemy2" parent="Actors" instance=ExtResource("3_pbw6q")]
+[node name="Enemy2" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(58, 7)
+player = NodePath("../MC")
 
-[node name="Enemy" parent="Actors" instance=ExtResource("3_pbw6q")]
+[node name="Enemy" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(-36, 6)
+player = NodePath("../MC")
 
 [node name="MC" parent="Actors" instance=ExtResource("5_pbw6q")]
+scale = Vector2(1.0031, 1)
 
 [node name="Barrel" parent="Actors" instance=ExtResource("4_rgh2o")]
 position = Vector2(34, 0)

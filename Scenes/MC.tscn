@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://biynfh7n3obul"]
+[gd_scene load_steps=12 format=3 uid="uid://biynfh7n3obul"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_ecr47"]
 [ext_resource type="Texture2D" uid="uid://lfc67v2yhf6p" path="res://Assets/Player/mcIDLEWalk-Sheet.png" id="2_bntvb"]
@@ -109,6 +109,9 @@ height = 26.6741
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecr47"]
 size = Vector2(18, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyq4k"]
+size = Vector2(6, 11)
+
 [node name="BaseCharacter" instance=ExtResource("1_ecr47")]
 collision_mask = 10
 script = ExtResource("2_lyq4k")
@@ -135,7 +138,6 @@ scale = Vector2(0.445871, 0.479465)
 shape = SubResource("CapsuleShape2D_ecr47")
 
 [node name="DamageEmitter" parent="." index="4"]
-visible = false
 collision_layer = 0
 collision_mask = 96
 monitoring = false
@@ -145,4 +147,15 @@ position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_ecr47")
 debug_color = Color(0.96974, 0, 0.459364, 0.42)
 
+[node name="DamageReciever" parent="." index="5"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="DamageReciever" index="0"]
+position = Vector2(-1, -17)
+shape = SubResource("RectangleShape2D_lyq4k")
+
+[connection signal="area_entered" from="DamageEmitter" to="." method="_on_damage_emitter_area_entered"]
+
 [editable path="DamageEmitter"]
+[editable path="DamageReciever"]

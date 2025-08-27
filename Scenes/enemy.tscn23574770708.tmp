@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgbsbqlhj6lla"]
+[gd_scene load_steps=10 format=3 uid="uid://cgbsbqlhj6lla"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://b61ncetr7782w" path="res://Assets/Enemy/with_outline/Combined_Spritesheet.png" id="2_1f0kj"]
@@ -70,42 +70,10 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.427682),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"on_action_completed"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_1dp5w"]
-resource_name = "Hurt"
-length = 0.4595
-step = 0.33
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.119665, 0.218296, 0.322514),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dp5w"]
 _data = {
 &"Attack": SubResource("Animation_ghaa6"),
-&"Hurt": SubResource("Animation_1dp5w"),
 &"Idle": SubResource("Animation_afpow"),
 &"RESET": SubResource("Animation_287tu"),
 &"Walk": SubResource("Animation_0830c")
@@ -115,17 +83,10 @@ _data = {
 radius = 3.0
 height = 14.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
-size = Vector2(16, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
-size = Vector2(11, 16)
-
 [node name="Enemy" instance=ExtResource("1_hghv2")]
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_afpow")
-SPEED = 50
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -146,24 +107,4 @@ position = Vector2(0, -9.255)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1f0kj")
 
-[node name="DamageEmitter" parent="." index="4"]
-collision_layer = 0
-collision_mask = 16
-monitoring = false
-
-[node name="CollisionShape2D" parent="DamageEmitter" index="0"]
-position = Vector2(1, -18)
-shape = SubResource("RectangleShape2D_287tu")
-debug_color = Color(0.980536, 0, 0.378836, 0.42)
-
-[node name="DamageReciever" parent="." index="5"]
-collision_layer = 32
-collision_mask = 0
-
-[node name="CollisionShape2D" parent="DamageReciever" index="0"]
-position = Vector2(0, -17)
-shape = SubResource("RectangleShape2D_afpow")
-debug_color = Color(1.78084e-06, 0.642596, 0.31502, 0.42)
-
 [editable path="DamageEmitter"]
-[editable path="DamageReciever"]

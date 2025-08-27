@@ -4,36 +4,38 @@ extends CharacterBody2D
 @export var SPEED: int = 100
 @export var HEALTH:int= 20
 @export var DAMAGE:int = 20
-@export var attack_animation:String
+
 
 @onready var damage_emitter: Area2D = $DamageEmitter
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var damage_reciever: Damage_Reciever = $DamageReciever
 
-enum STATE {IDLE, WALK, ATTACK, JUMP}
+enum STATE {IDLE, WALK, ATTACK, JUMP, HURT}
 
 var state:STATE = STATE.IDLE
 
 var anim_map:Dictionary={
 	STATE.IDLE:"Idle",
 	STATE.WALK:"Walk",
-	STATE.ATTACK:attack_animation,
-	STATE.JUMP:"Jump"
-	
+	STATE.ATTACK:"Punch",
+	STATE.JUMP:"Jump",
+	STATE.HURT:"Hurt",
 	
 }
 func _ready() -> void:
 	damage_emitter.area_entered.connect(on_emit_damage.bind())
+	damage_reciever.damage_received.connect(on_recieve_damage.bind())
 	
 func _physics_process(_delta: float) -> void:
-	print(state)
-	handle_input()
+	
+	handle_input(_delta)
 	handle_flip()
 	handle_movement()
 	handle_animations()
 	
 	move_and_slide()
 
-func handle_input()->void:
+func handle_input(_delta)->void:
 	pass
 	
 func handle_movement()->void:
@@ -67,6 +69,11 @@ func on_emit_damage(DamageReciever:Damage_Reciever):
 	
 
 func on_action_completed()->void:
-	print("Idled")
+	
 	state=STATE.IDLE
+
+func on_recieve_damage(damage:int, direction:Vector2):
+	
+	state = STATE.HURT
+	
 	
