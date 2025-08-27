@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm1k3eyim1de0"]
+[gd_scene load_steps=11 format=3 uid="uid://bm1k3eyim1de0"]
 
 [ext_resource type="Texture2D" uid="uid://dijcwln88i27f" path="res://icon.svg" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://c5an5wobf220v" path="res://Scripts/main.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://cgbsbqlhj6lla" path="res://Scenes/enemy.tscn" id="3_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://bwsrbpnfqffvu" path="res://Scenes/Barrel.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://biynfh7n3obul" path="res://Scenes/MC.tscn" id="5_pbw6q"]
 
@@ -78,6 +79,12 @@ debug_color = Color(0.835294, 0, 0, 0.419608)
 
 [node name="Actors" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="Enemy2" parent="Actors" instance=ExtResource("3_pbw6q")]
+position = Vector2(58, 7)
+
+[node name="Enemy" parent="Actors" instance=ExtResource("3_pbw6q")]
+position = Vector2(-36, 6)
 
 [node name="MC" parent="Actors" instance=ExtResource("5_pbw6q")]
 

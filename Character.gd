@@ -4,13 +4,23 @@ extends CharacterBody2D
 @export var SPEED: int = 100
 @export var HEALTH:int= 20
 @export var DAMAGE:int = 20
+@export var attack_animation:String
 
 @onready var damage_emitter: Area2D = $DamageEmitter
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-enum STATE {IDLE, WALK, ATTACK}
+enum STATE {IDLE, WALK, ATTACK, JUMP}
 
 var state:STATE = STATE.IDLE
+
+var anim_map:Dictionary={
+	STATE.IDLE:"Idle",
+	STATE.WALK:"Walk",
+	STATE.ATTACK:attack_animation,
+	STATE.JUMP:"Jump"
+	
+	
+}
 func _ready() -> void:
 	damage_emitter.area_entered.connect(on_emit_damage.bind())
 	
@@ -24,14 +34,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func handle_input()->void:
-	
-	var direction:=Input.get_vector("Left", "Right","Up", "Down" )
-	velocity = direction*SPEED
-	
-	if can_attack() and Input.is_action_just_pressed("Attack"):
-		state= STATE.ATTACK
-		#""""""""""""""animation logic""""""""""
-		handle_animations()
+	pass
 	
 func handle_movement()->void:
 	if can_move():
@@ -43,14 +46,9 @@ func handle_movement()->void:
 		velocity = Vector2.ZERO
 		
 func handle_animations()->void:
-	if state==STATE.IDLE:
-		animation_player.play("Idle")
-	elif state==STATE.WALK:
-		animation_player.play("Walk")
-	elif state==STATE.ATTACK:
-		print("animations")
-		animation_player.play("Punch")
-		
+	animation_player.play(anim_map[state])
+	
+
 func can_move()->bool:
 	return state==STATE.IDLE or state == STATE.WALK
 	

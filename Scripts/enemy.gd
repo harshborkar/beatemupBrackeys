@@ -1,5 +1,6 @@
-class_name Player
+class_name Basic_Enemy
 extends Character
+
 
 func handle_input()->void:
 	
