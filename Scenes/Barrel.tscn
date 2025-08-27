@@ -1,15 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwsrbpnfqffvu"]
+[gd_scene load_steps=8 format=3 uid="uid://bwsrbpnfqffvu"]
 
 [ext_resource type="Texture2D" uid="uid://ibus4qfe5gtg" path="res://Assets/barrel.png" id="1_3w4xy"]
+[ext_resource type="Script" uid="uid://dijwx52akh7pm" path="res://Scripts/barrel.gd" id="1_a0v44"]
+[ext_resource type="PackedScene" uid="uid://b1cqb8tcwtqpl" path="res://Scenes/Areas/damage_reciever.tscn" id="2_ayvs4"]
+[ext_resource type="Shader" uid="uid://4g30cjm2l68r" path="res://Shader/flash.gdshader" id="2_x12qv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y3xgc"]
+shader = ExtResource("2_x12qv")
+shader_parameter/flash = 0.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m5w3l"]
 radius = 6.0
 height = 28.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a0v44"]
+radius = 15.0
+height = 46.0
+
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_layer = 8
+script = ExtResource("1_a0v44")
 
 [node name="Barrel" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_y3xgc")
 texture = ExtResource("1_3w4xy")
 offset = Vector2(0, -24)
 hframes = 2
@@ -18,3 +32,13 @@ hframes = 2
 position = Vector2(0, -7)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_m5w3l")
+
+[node name="DamageReciever" parent="." instance=ExtResource("2_ayvs4")]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="DamageReciever" index="0"]
+position = Vector2(-1, -21)
+shape = SubResource("CapsuleShape2D_a0v44")
+
+[editable path="DamageReciever"]

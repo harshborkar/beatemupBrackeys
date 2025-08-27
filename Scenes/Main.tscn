@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dijcwln88i27f" path="res://icon.svg" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://c5an5wobf220v" path="res://Scripts/main.gd" id="1_kln2b"]
-[ext_resource type="PackedScene" uid="uid://towt06ummgi3" path="res://Scenes/Player.tscn" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://bwsrbpnfqffvu" path="res://Scenes/Barrel.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://biynfh7n3obul" path="res://Scenes/MC.tscn" id="5_pbw6q"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c1w88"]
 normal = Vector2(-0.0212718, 0.999774)
@@ -79,8 +79,7 @@ debug_color = Color(0.835294, 0, 0, 0.419608)
 [node name="Actors" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Actors" instance=ExtResource("1_r150o")]
-collision_layer = 2
+[node name="MC" parent="Actors" instance=ExtResource("5_pbw6q")]
 
 [node name="Barrel" parent="Actors" instance=ExtResource("4_rgh2o")]
 position = Vector2(34, 0)
