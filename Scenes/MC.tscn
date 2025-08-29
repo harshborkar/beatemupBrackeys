@@ -5,6 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://bo4dbr1i85mgo" path="res://Assets/Player/Combined_Spritesheet2.png" id="3_ogp6k"]
 [ext_resource type="PackedScene" uid="uid://cbia2n51rdd7q" path="res://Scenes/enemy_slot.tscn" id="4_ogp6k"]
 
+[sub_resource type="Animation" id="Animation_i4aq3"]
+resource_name = "Hurt"
+length = 0.2325
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4)]
+}
+
 [sub_resource type="Animation" id="Animation_unrri"]
 resource_name = "idle"
 length = 0.3
@@ -105,22 +121,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2i(0, 6), Vector2i(1, 6)]
-}
-
-[sub_resource type="Animation" id="Animation_i4aq3"]
-resource_name = "Hurt"
-length = 0.2325
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i4aq3"]

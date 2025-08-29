@@ -1,32 +1,20 @@
 [gd_scene load_steps=13 format=3 uid="uid://cgbsbqlhj6lla"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_hghv2"]
-[ext_resource type="Texture2D" uid="uid://b61ncetr7782w" path="res://Assets/Enemy/with_outline/Combined_Spritesheet.png" id="2_1f0kj"]
 [ext_resource type="Script" uid="uid://6pwen3anoin6" path="res://Scripts/enemy.gd" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://pxndnvcyqx3d" path="res://Assets/Enemy/Enemy1/Combined_Spritesheet[1].png" id="3_afpow"]
 
 [sub_resource type="Animation" id="Animation_ghaa6"]
 resource_name = "Attack"
 length = 0.4895
 step = 0.33
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0420671, 0.101662, 0.185796, 0.273436, 0.350559),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.427682),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -34,10 +22,22 @@ tracks/1/keys = {
 "method": &"on_action_completed"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterSprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_1dp5w"]
 resource_name = "Hurt"
-length = 0.4595
+length = 0.3785
 step = 0.33
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -46,10 +46,10 @@ tracks/0/path = NodePath("CharacterSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.119665, 0.218296, 0.322514),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)]
+"values": [Vector2i(0, 2), Vector2i(1, 2)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -68,7 +68,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_afpow"]
 resource_name = "Idle"
-length = 0.714
+length = 0.54
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -78,10 +78,10 @@ tracks/0/path = NodePath("CharacterSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(5, 6), Vector2i(6, 6)]
+"values": [Vector2i(0, 3), Vector2i(0, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_287tu"]
@@ -96,11 +96,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 6)]
+"values": [Vector2i(0, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_0830c"]
 resource_name = "walk"
+length = 0.3825
 loop_mode = 1
 step = 0.33
 tracks/0/type = "value"
@@ -110,10 +111,10 @@ tracks/0/path = NodePath("CharacterSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.151215, 0.263868, 0.376522, 0.506703, 0.64039, 0.760054, 0.837652),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(3, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9), Vector2i(7, 9)]
+"values": [Vector2i(0, 4), Vector2i(1, 4)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dp5w"]
@@ -133,7 +134,7 @@ height = 14.0
 size = Vector2(16, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
-size = Vector2(11, 16)
+size = Vector2(11, 21)
 
 [node name="Enemy" instance=ExtResource("1_hghv2")]
 collision_layer = 4
@@ -147,16 +148,17 @@ libraries = {
 }
 
 [node name="CharacterSprite" parent="." index="2"]
-scale = Vector2(0.46, 0.46)
-texture = ExtResource("2_1f0kj")
+position = Vector2(-6, -22)
+scale = Vector2(0.038, 0.038)
+texture = ExtResource("3_afpow")
 centered = false
 offset = Vector2(-48, -84)
-hframes = 12
-vframes = 10
-frame = 72
+hframes = 2
+vframes = 5
+frame = 6
 
 [node name="CollisionShape2D" parent="." index="3"]
-position = Vector2(0, -9.255)
+position = Vector2(0, -4)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1f0kj")
 
@@ -166,7 +168,7 @@ collision_mask = 16
 monitoring = false
 
 [node name="CollisionShape2D" parent="DamageEmitter" index="0"]
-position = Vector2(1, -18)
+position = Vector2(3, -20)
 shape = SubResource("RectangleShape2D_287tu")
 debug_color = Color(0.980536, 0, 0.378836, 0.42)
 
@@ -175,7 +177,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="DamageReciever" index="0"]
-position = Vector2(0, -17)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_afpow")
 debug_color = Color(1.78084e-06, 0.642596, 0.31502, 0.42)
 
