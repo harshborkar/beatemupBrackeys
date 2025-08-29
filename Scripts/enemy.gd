@@ -22,4 +22,11 @@ func on_recieve_damage(damage:int, direction:Vector2):
 	if current_health==0:
 		player.free_slot(self)
 		
+func set_heading():
+	if player==null:
+		return
+	if position.x<player.position.x:
+		heading = Vector2.RIGHT
+	elif  position.x>player.position.x:
+		heading = Vector2.LEFT
 	

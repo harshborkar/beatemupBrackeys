@@ -174,16 +174,16 @@ shape = SubResource("CapsuleShape2D_ecr47")
 [node name="EnemySlots" type="Node2D" parent="." index="4"]
 
 [node name="Enemy Slots" parent="EnemySlots" index="0" instance=ExtResource("4_ogp6k")]
-position = Vector2(16, -13)
+position = Vector2(14, -6)
 
 [node name="Enemy Slots2" parent="EnemySlots" index="1" instance=ExtResource("4_ogp6k")]
-position = Vector2(-12, -12)
+position = Vector2(-11, -7)
 
 [node name="Enemy Slots3" parent="EnemySlots" index="2" instance=ExtResource("4_ogp6k")]
-position = Vector2(-12, 2)
+position = Vector2(-11, 2)
 
 [node name="Enemy Slots4" parent="EnemySlots" index="3" instance=ExtResource("4_ogp6k")]
-position = Vector2(17, 2)
+position = Vector2(15, 2)
 
 [node name="DamageEmitter" parent="." index="5"]
 collision_layer = 0
