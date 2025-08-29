@@ -30,7 +30,7 @@ func reserve_slot(enemy:Basic_Enemy)->EnemySlot:
 	
 func free_slot(enemy:Basic_Enemy)->void:
 	var target_slot := enemy_slots.filter(
-		func(slot: EnemySlot):return slot.occupant == enemy
+		func(slot: EnemySlot):return slot.occupant ==enemy
 	)
 	if target_slot.size() == 1:
 		target_slot[0].free_up()
