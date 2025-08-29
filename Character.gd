@@ -15,7 +15,7 @@ enum STATE {IDLE, WALK, ATTACK, HURT, DEATH, TAKEOFF, JUMP, LAND}
 
 var state:STATE = STATE.IDLE
 var knockback_velocity: Vector2 = Vector2.ZERO  # Separate variable for knockback
-
+var heading:Vector2 = Vector2.RIGHT
 var anim_map:Dictionary={
 	STATE.IDLE:"Idle",
 	STATE.WALK:"Walk",
@@ -38,8 +38,10 @@ func _physics_process(delta: float) -> void:  # Added delta parameter
 	handle_flip()
 	handle_movement(delta)  # Pass delta to handle_movement
 	handle_animations()
-	
+	set_heading()
 	move_and_slide()
+func set_heading():
+	pass
 
 func handle_input(_delta)->void:
 	pass
@@ -70,10 +72,10 @@ func can_attack()->bool:
 	return state == STATE.IDLE or state==STATE.WALK
 	
 func handle_flip() -> void:
-	if velocity.x > 0:
+	if heading==Vector2.RIGHT:
 		character_sprite.flip_h = false
 		damage_emitter.scale.x = 1
-	elif velocity.x < 0:
+	else:
 		character_sprite.flip_h = true
 		damage_emitter.scale.x = -1
 

@@ -35,3 +35,8 @@ func free_slot(enemy:Basic_Enemy)->void:
 	if target_slot.size() == 1:
 		target_slot[0].free_up()
 	
+func set_heading():
+	if velocity.x>0:
+		heading= Vector2.RIGHT
+	elif velocity.x<0:
+		heading =Vector2.LEFT
