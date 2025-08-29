@@ -81,26 +81,42 @@ y_sort_enabled = true
 
 [node name="Enemy2" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(58, 7)
+duration_between_hits = 2000
 player = NodePath("../MC")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="Enemy" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(-56, -3)
+duration_between_hits = 2000
 player = NodePath("../MC")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="Enemy3" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(53, 44)
+duration_between_hits = 2000
 player = NodePath("../MC")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="Enemy4" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(-22, 47)
+duration_between_hits = 2000
 player = NodePath("../MC")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="Enemy5" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("3_pbw6q")]
 position = Vector2(-75, 23)
+duration_between_hits = 2000
 player = NodePath("../MC")
+MAX_HEALTH = 30
+DAMAGE = 5
 
 [node name="MC" parent="Actors" instance=ExtResource("5_pbw6q")]
 scale = Vector2(1.0031, 1)
+MAX_HEALTH = 100
 
 [node name="Barrel" parent="Actors" instance=ExtResource("4_rgh2o")]
 position = Vector2(34, 0)

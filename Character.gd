@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var damage_reciever: Damage_Reciever = $DamageReciever
 @onready var character_sprite: Sprite2D = $CharacterSprite
 
-enum STATE {IDLE, WALK, ATTACK, HURT, DEATH, TAKEOFF, JUMP, LAND}
+enum STATE {IDLE, WALK, ATTACK, HURT, DEATH, TAKEOFF, JUMP, LAND, PREP_ATTACK}
 
 var state:STATE = STATE.IDLE
 var knockback_velocity: Vector2 = Vector2.ZERO  # Separate variable for knockback
@@ -22,7 +22,8 @@ var anim_map:Dictionary={
 	STATE.ATTACK:"Punch",
 	STATE.JUMP:"Jump",
 	STATE.HURT:"Hurt",
-	STATE.DEATH:"Death"
+	STATE.DEATH:"Death",
+	STATE.PREP_ATTACK:"walk"
 }
 
 var current_health = 0
@@ -39,13 +40,16 @@ func _physics_process(delta: float) -> void:  # Added delta parameter
 	handle_movement(delta)  # Pass delta to handle_movement
 	handle_animations()
 	set_heading()
+	handle_prep_attack()
 	move_and_slide()
 func set_heading():
 	pass
 
 func handle_input(_delta)->void:
 	pass
-	
+
+func handle_prep_attack()->void:
+	pass
 func handle_movement(delta: float)->void:
 	if can_move():
 		if velocity.length() == 0:

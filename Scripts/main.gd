@@ -12,5 +12,7 @@ extends Node2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if player==null:
+		return
 	if player.position.x > camera_2d.position.x:
 		camera_2d.position.x = player.position.x

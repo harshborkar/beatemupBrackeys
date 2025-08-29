@@ -4,37 +4,6 @@
 [ext_resource type="Script" uid="uid://6pwen3anoin6" path="res://Scripts/enemy.gd" id="2_afpow"]
 [ext_resource type="Texture2D" uid="uid://pxndnvcyqx3d" path="res://Assets/Enemy/Enemy1/Combined_Spritesheet[1].png" id="3_afpow"]
 
-[sub_resource type="Animation" id="Animation_ghaa6"]
-resource_name = "Attack"
-length = 0.4895
-step = 0.33
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.427682),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"on_action_completed"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterSprite:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.18),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_auwsv"]
 resource_name = "Death"
 length = 0.455
@@ -153,6 +122,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageEmitter:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0830c"]
 resource_name = "walk"
@@ -172,12 +153,55 @@ tracks/0/keys = {
 "values": [Vector2i(0, 4), Vector2i(1, 4)]
 }
 
+[sub_resource type="Animation" id="Animation_ghaa6"]
+resource_name = "Attack"
+length = 0.203
+step = 0.33
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.196871),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_action_completed"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterSprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.156528),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageEmitter:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.203),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dp5w"]
 _data = {
-&"Attack": SubResource("Animation_ghaa6"),
 &"Death": SubResource("Animation_auwsv"),
 &"Hurt": SubResource("Animation_1dp5w"),
 &"Idle": SubResource("Animation_afpow"),
+&"Punch": SubResource("Animation_ghaa6"),
 &"RESET": SubResource("Animation_287tu"),
 &"Walk": SubResource("Animation_0830c")
 }
@@ -196,7 +220,8 @@ size = Vector2(12, 11)
 collision_layer = 4
 collision_mask = 14
 script = ExtResource("2_afpow")
-SPEED = 50
+duration_between_hits = 4000
+duration_prep_hits = 1000
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -220,7 +245,7 @@ shape = SubResource("CapsuleShape2D_1f0kj")
 
 [node name="DamageEmitter" parent="." index="4"]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 16
 
 [node name="CollisionShape2D" parent="DamageEmitter" index="0"]
 position = Vector2(5, -20.5)

@@ -1,6 +1,7 @@
 class_name Player
 extends Character
 @onready var enemy_slots: Array = $EnemySlots.get_children()
+@onready var animation_player_mc: AnimationPlayer = $AnimationPlayer
 
 func handle_input(_delta)->void:
 	
@@ -11,7 +12,10 @@ func handle_input(_delta)->void:
 		state= STATE.ATTACK
 		#""""""""""""""animation logic""""""""""
 		handle_animations()
-
+		
+		
+func _process(delta: float) -> void:
+	pass
 
 func reserve_slot(enemy:Basic_Enemy)->EnemySlot:
 	var available_slots:= enemy_slots.filter(
@@ -40,3 +44,8 @@ func set_heading():
 		heading= Vector2.RIGHT
 	elif velocity.x<0:
 		heading =Vector2.LEFT
+
+
+func death():
+	
+	queue_free()
