@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://biynfh7n3obul"]
+[gd_scene load_steps=16 format=3 uid="uid://biynfh7n3obul"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u3x2sl56hv" path="res://Scenes/BaseCharacter.tscn" id="1_ecr47"]
 [ext_resource type="Script" uid="uid://vqr33ybkmofx" path="res://Scripts/mc.gd" id="2_lyq4k"]
 [ext_resource type="Texture2D" uid="uid://bo4dbr1i85mgo" path="res://Assets/Player/Combined_Spritesheet2.png" id="3_ogp6k"]
 [ext_resource type="PackedScene" uid="uid://cbia2n51rdd7q" path="res://Scenes/enemy_slot.tscn" id="4_ogp6k"]
+[ext_resource type="PackedScene" uid="uid://c8j8rhtotwsp8" path="res://Scenes/health_bar.tscn" id="5_unrri"]
 
 [sub_resource type="Animation" id="Animation_i4aq3"]
 resource_name = "Hurt"
@@ -217,10 +218,10 @@ shape = SubResource("CapsuleShape2D_ecr47")
 [node name="EnemySlots" type="Node2D" parent="." index="4"]
 
 [node name="Enemy Slots" parent="EnemySlots" index="0" instance=ExtResource("4_ogp6k")]
-position = Vector2(14, -6)
+position = Vector2(12, -6)
 
 [node name="Enemy Slots2" parent="EnemySlots" index="1" instance=ExtResource("4_ogp6k")]
-position = Vector2(-11, -7)
+position = Vector2(-11, -5)
 
 [node name="Enemy Slots3" parent="EnemySlots" index="2" instance=ExtResource("4_ogp6k")]
 position = Vector2(-11, 2)
@@ -244,5 +245,20 @@ collision_mask = 0
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_unrri")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
+layer = 3
+
+[node name="HealthBar" parent="CanvasLayer" index="0" instance=ExtResource("5_unrri")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 150.0
+offset_bottom = 45.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(2.21, 2.21)
+tint_progress = Color(0.999038, 0.7276, 0.689214, 1)
+
 [editable path="DamageEmitter"]
 [editable path="DamageReciever"]
+[editable path="CanvasLayer/HealthBar"]

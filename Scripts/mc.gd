@@ -2,6 +2,7 @@ class_name Player
 extends Character
 @onready var enemy_slots: Array = $EnemySlots.get_children()
 @onready var animation_player_mc: AnimationPlayer = $AnimationPlayer
+@onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
 
 func handle_input(_delta)->void:
 	
@@ -45,7 +46,23 @@ func set_heading():
 	elif velocity.x<0:
 		heading =Vector2.LEFT
 
+func on_recieve_damage(damage:int, direction:Vector2):
+	health_bar.value-=damage
+	current_health = clamp(current_health - damage, 0, MAX_HEALTH) 
+	if current_health <= 0:
+		state=STATE.DEATH
+		#queue_free()
+	else:
+		# Set knockback velocity and state
+		knockback_velocity = knockback_intensity * direction
+		state = STATE.HURT
+		handle_animations()
 
+func set_health():
+	health_bar.value = MAX_HEALTH
+
+func set_max_health():
+	health_bar.max_value = MAX_HEALTH
 func death():
 	
 	queue_free()

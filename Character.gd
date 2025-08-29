@@ -29,11 +29,13 @@ var anim_map:Dictionary={
 var current_health = 0
 
 func _ready() -> void:
+	set_health()
 	state = STATE.IDLE
 	damage_emitter.area_entered.connect(on_emit_damage.bind())
 	damage_reciever.damage_received.connect(on_recieve_damage.bind())
 	current_health = MAX_HEALTH
-	
+func set_health():
+	pass
 func _physics_process(delta: float) -> void:  # Added delta parameter
 	handle_input(delta)
 	handle_flip()
@@ -41,7 +43,10 @@ func _physics_process(delta: float) -> void:  # Added delta parameter
 	handle_animations()
 	set_heading()
 	handle_prep_attack()
+	set_max_health()
 	move_and_slide()
+	
+
 func set_heading():
 	pass
 
@@ -68,7 +73,8 @@ func handle_animations()->void:
 	if animation_player.has_animation(anim_map[state]):
 		animation_player.play(anim_map[state])
 	
-
+func set_max_health():
+	pass
 func can_move()->bool:
 	return state==STATE.IDLE or state == STATE.WALK
 	

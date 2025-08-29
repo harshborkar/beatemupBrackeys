@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm1k3eyim1de0"]
+[gd_scene load_steps=11 format=3 uid="uid://bm1k3eyim1de0"]
 
 [ext_resource type="Texture2D" uid="uid://dijcwln88i27f" path="res://icon.svg" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://c5an5wobf220v" path="res://Scripts/main.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cgbsbqlhj6lla" path="res://Scenes/enemy.tscn" id="3_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://bwsrbpnfqffvu" path="res://Scenes/Barrel.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://biynfh7n3obul" path="res://Scenes/MC.tscn" id="5_pbw6q"]
-[ext_resource type="PackedScene" uid="uid://c8j8rhtotwsp8" path="res://Scenes/health_bar.tscn" id="6_v1gob"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c1w88"]
 normal = Vector2(-0.0212718, 0.999774)
@@ -123,15 +122,3 @@ MAX_HEALTH = 100
 position = Vector2(34, 0)
 scale = Vector2(0.40625, 0.40625)
 collision_mask = 0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("6_v1gob")]
-anchors_preset = -1
-anchor_right = 0.975
-offset_left = -66.0
-offset_top = -38.0
-offset_right = -953.2
-offset_bottom = -551.0
-
-[editable path="CanvasLayer/HealthBar"]
