@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://j60kskl5clv3"]
+[gd_scene load_steps=9 format=3 uid="uid://j60kskl5clv3"]
 
 [ext_resource type="Script" uid="uid://ddgbqwahaynap" path="res://Scripts/cards.gd" id="1_4ll3t"]
+[ext_resource type="Shader" uid="uid://m4b2vunmrx6u" path="res://Shader/cards.gdshader" id="1_eomap"]
 [ext_resource type="Texture2D" uid="uid://cuwq7mrgydhgt" path="res://Assets/Cards/Temp/pixelCards/CuteCardsPixel_outline.png" id="1_xdaph"]
 
 [sub_resource type="Animation" id="Animation_4ll3t"]
@@ -63,6 +64,27 @@ _data = {
 &"RESET": SubResource("Animation_eomap")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eomap"]
+shader = ExtResource("1_eomap")
+shader_parameter/debug = true
+shader_parameter/border_scale = 0.665
+shader_parameter/shadow_offset = Vector2(0, -100)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/blur_amount = 2.49
+shader_parameter/shadow_scale = 1.5
+shader_parameter/disable_rotating = false
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = false
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+shader_parameter/hovering = 0.265
+shader_parameter/rand_trans_power = 1.0
+shader_parameter/rand_seed = 0.0
+shader_parameter/vortex_amt = 0.0
+shader_parameter/rotation = 0.0
+shader_parameter/mouse_screen_pos_test = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ll3t"]
 size = Vector2(22, 33)
 
@@ -77,13 +99,17 @@ libraries = {
 speed_scale = 2.548
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_eomap")
 position = Vector2(0, -18)
 texture = ExtResource("1_xdaph")
 hframes = 15
 vframes = 4
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Mouse Area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse Area"]
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_4ll3t")
+
+[connection signal="mouse_entered" from="Mouse Area" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Mouse Area" to="." method="_on_area_2d_mouse_exited"]

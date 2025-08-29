@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bj4or5rqy1gsg"]
+[gd_scene load_steps=3 format=3 uid="uid://bj4or5rqy1gsg"]
 
 [ext_resource type="Script" uid="uid://215giswaekg3" path="res://Scripts/card_manager.gd" id="1_pikqg"]
+[ext_resource type="PackedScene" uid="uid://j60kskl5clv3" path="res://Scenes/cards.tscn" id="2_7ykl4"]
 
 [node name="Card Manager" type="Node2D"]
 script = ExtResource("1_pikqg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4.68, 4.68)
+
+[node name="Cards" parent="." instance=ExtResource("2_7ykl4")]
+
+[node name="Cards2" parent="." instance=ExtResource("2_7ykl4")]
+position = Vector2(33, -1)
