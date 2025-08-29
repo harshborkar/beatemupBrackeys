@@ -16,7 +16,6 @@ script = ExtResource("1_gau8p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="DamageEmitter" parent="." instance=ExtResource("3_62gcc")]
-monitoring = true
 
 [node name="DamageReciever" parent="." instance=ExtResource("2_14xnq")]
 

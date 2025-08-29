@@ -39,59 +39,20 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bntvb"]
 resource_name = "Punch"
-length = 0.333337
-tracks/0/type = "value"
+length = 0.4173
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DamageEmitter:monitoring")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.333333),
+"times": PackedFloat32Array(0.4173),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"on_action_completed"
 }]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CharacterSprite:frame_coords")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_lyq4k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DamageEmitter:monitoring")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -100,10 +61,49 @@ tracks/1/path = NodePath("CharacterSprite:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageEmitter:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4173),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lyq4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageEmitter:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ogp6k"]
@@ -136,13 +136,14 @@ _data = {
 radius = 4.48557
 height = 26.6741
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecr47"]
-size = Vector2(14, 3)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp6k"]
+size = Vector2(11, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyq4k"]
-size = Vector2(6, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unrri"]
+size = Vector2(10, 22)
 
 [node name="MC" instance=ExtResource("1_ecr47")]
+position = Vector2(1, 0)
 collision_mask = 10
 script = ExtResource("2_lyq4k")
 MAX_HEALTH = 30
@@ -170,39 +171,31 @@ rotation = 1.56692
 scale = Vector2(0.445871, 0.479465)
 shape = SubResource("CapsuleShape2D_ecr47")
 
-[node name="DamageEmitter" parent="." index="4"]
-collision_layer = 0
-collision_mask = 96
-monitoring = false
-
-[node name="CollisionShape2D" parent="DamageEmitter" index="0"]
-position = Vector2(6, -20.5)
-shape = SubResource("RectangleShape2D_ecr47")
-debug_color = Color(0.96974, 0, 0.459364, 0.42)
-
-[node name="DamageReciever" parent="." index="5"]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" parent="DamageReciever" index="0"]
-position = Vector2(-1, -21)
-shape = SubResource("RectangleShape2D_lyq4k")
-
-[node name="EnemySlots" type="Node2D" parent="." index="6"]
+[node name="EnemySlots" type="Node2D" parent="." index="4"]
 
 [node name="Enemy Slots" parent="EnemySlots" index="0" instance=ExtResource("4_ogp6k")]
-position = Vector2(16, -9)
+position = Vector2(16, -13)
 
 [node name="Enemy Slots2" parent="EnemySlots" index="1" instance=ExtResource("4_ogp6k")]
-position = Vector2(-15, -7)
+position = Vector2(-12, -12)
 
 [node name="Enemy Slots3" parent="EnemySlots" index="2" instance=ExtResource("4_ogp6k")]
-position = Vector2(-14, 0)
+position = Vector2(-12, 2)
 
 [node name="Enemy Slots4" parent="EnemySlots" index="3" instance=ExtResource("4_ogp6k")]
-position = Vector2(17, -1)
+position = Vector2(17, 2)
 
-[connection signal="area_entered" from="DamageEmitter" to="." method="_on_damage_emitter_area_entered"]
+[node name="DamageEmitter" parent="." index="5"]
+collision_layer = 0
+collision_mask = 96
+
+[node name="CollisionShape2D" parent="DamageEmitter" index="0"]
+position = Vector2(5.5, -20)
+shape = SubResource("RectangleShape2D_ogp6k")
+
+[node name="CollisionShape2D" parent="DamageReciever" index="0"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_unrri")
 
 [editable path="DamageEmitter"]
 [editable path="DamageReciever"]

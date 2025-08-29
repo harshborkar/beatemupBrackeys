@@ -9,8 +9,9 @@ extends CharacterBody2D
 @onready var damage_emitter: Area2D = $DamageEmitter
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var damage_reciever: Damage_Reciever = $DamageReciever
+@onready var character_sprite: Sprite2D = $CharacterSprite
 
-enum STATE {IDLE, WALK, ATTACK, JUMP, HURT}
+enum STATE {IDLE, WALK, ATTACK, HURT, DEATH, TAKEOFF, JUMP, LAND}
 
 var state:STATE = STATE.IDLE
 var knockback_velocity: Vector2 = Vector2.ZERO  # Separate variable for knockback
@@ -21,6 +22,7 @@ var anim_map:Dictionary={
 	STATE.ATTACK:"Punch",
 	STATE.JUMP:"Jump",
 	STATE.HURT:"Hurt",
+	STATE.DEATH:"Death"
 }
 
 var current_health = 0
@@ -67,10 +69,13 @@ func can_move()->bool:
 func can_attack()->bool:
 	return state == STATE.IDLE or state==STATE.WALK
 	
-	
 func handle_flip() -> void:
-	if velocity.x != 0:
-		$CharacterSprite.flip_h = velocity.x < 0
+	if velocity.x > 0:
+		character_sprite.flip_h = false
+		damage_emitter.scale.x = 1
+	elif velocity.x < 0:
+		character_sprite.flip_h = true
+		damage_emitter.scale.x = -1
 
 
 func on_emit_damage(DamageReciever:Damage_Reciever):
@@ -85,7 +90,8 @@ func on_action_completed()->void:
 func on_recieve_damage(damage:int, direction:Vector2):
 	current_health = clamp(current_health - damage, 0, MAX_HEALTH) 
 	if current_health <= 0:
-		queue_free()
+		state=STATE.DEATH
+		#queue_free()
 	else:
 		# Set knockback velocity and state
 		knockback_velocity = knockback_intensity * direction

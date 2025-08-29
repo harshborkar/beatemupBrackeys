@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://j60kskl5clv3"]
+
+[ext_resource type="Script" uid="uid://ddgbqwahaynap" path="res://Scripts/cards.gd" id="1_4ll3t"]
+[ext_resource type="Texture2D" uid="uid://cuwq7mrgydhgt" path="res://Assets/Cards/Temp/pixelCards/CuteCardsPixel_outline.png" id="1_xdaph"]
+
+[sub_resource type="Animation" id="Animation_4ll3t"]
+resource_name = "Flip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(14, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.520752, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.02, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eomap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fb33y"]
+_data = {
+&"Flip": SubResource("Animation_4ll3t"),
+&"RESET": SubResource("Animation_eomap")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ll3t"]
+size = Vector2(22, 33)
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_4ll3t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+texture = ExtResource("1_xdaph")
+hframes = 15
+vframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_4ll3t")

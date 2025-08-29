@@ -29,7 +29,6 @@ script = ExtResource("1_kln2b")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(2, -47)
 collision_layer = 2
-collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-2, 0)
@@ -48,7 +47,6 @@ texture = ExtResource("1_idj7w")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(2, -47)
 collision_layer = 2
-collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-2, 118)
@@ -71,6 +69,7 @@ texture = ExtResource("1_idj7w")
 zoom = Vector2(5.425, 5.425)
 
 [node name="Leftwall" type="StaticBody2D" parent="Camera2D"]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Leftwall"]
 position = Vector2(-98, 5.5)

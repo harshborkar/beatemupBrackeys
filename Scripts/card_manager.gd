@@ -1,0 +1,2 @@
+class_name card_manager
+extends Node2D
