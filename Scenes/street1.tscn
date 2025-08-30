@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmmajc47xnbwl"]
+[gd_scene load_steps=14 format=3 uid="uid://by0hhfs86mqi4"]
 
 [ext_resource type="Texture2D" uid="uid://b6q642q65opki" path="res://Assets/Background/Streets of Fight files/Assets/Stage Layers/tileset.png" id="1_gyy0t"]
 [ext_resource type="Texture2D" uid="uid://d3puyew6p7llw" path="res://Assets/Background/Streets of Fight files/Assets/Stage Layers/props/car.png" id="2_tlae6"]
 [ext_resource type="Texture2D" uid="uid://brys2hk0yubvh" path="res://Assets/Background/Streets of Fight files/Assets/Stage Layers/props/hydrant.png" id="3_1ayso"]
 [ext_resource type="Texture2D" uid="uid://bpyhdfjyc6rlt" path="res://Assets/Background/Clouds/Clouds 7/1.png" id="4_qngg3"]
 [ext_resource type="Texture2D" uid="uid://pdr1875j5n70" path="res://Assets/Background/Clouds/Clouds 7/2.png" id="5_oe6ad"]
-[ext_resource type="Script" path="res://Scenes/cloud_1.gd" id="6_1ayso"]
+[ext_resource type="Script" uid="uid://8xvf0qge3123" path="res://Scenes/cloud_1.gd" id="6_1ayso"]
 [ext_resource type="Texture2D" uid="uid://cbjv3mko2lh3h" path="res://Assets/Background/Clouds/Clouds 7/3.png" id="6_vp721"]
 [ext_resource type="Texture2D" uid="uid://c371r7gdwf5h" path="res://Assets/Background/Clouds/Clouds 7/4.png" id="7_npvcl"]
-[ext_resource type="Script" path="res://Scenes/cloud_2.gd" id="8_qngg3"]
+[ext_resource type="Script" uid="uid://d2xx3ii5yhkyy" path="res://Scenes/cloud_2.gd" id="8_qngg3"]
 [ext_resource type="PackedScene" uid="uid://biynfh7n3obul" path="res://Scenes/MC.tscn" id="8_tlae6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_c5t2i"]
