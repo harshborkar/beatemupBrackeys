@@ -214,7 +214,7 @@ height = 14.0
 size = Vector2(14, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
-size = Vector2(12, 11)
+size = Vector2(12, 16)
 
 [node name="Enemy" instance=ExtResource("1_hghv2")]
 collision_layer = 4
@@ -256,7 +256,7 @@ collision_layer = 32
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="DamageReciever" index="0"]
-position = Vector2(1, -17.5)
+position = Vector2(1, -15)
 shape = SubResource("RectangleShape2D_287tu")
 
 [editable path="DamageEmitter"]
