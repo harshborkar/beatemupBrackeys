@@ -559,7 +559,7 @@ motion_mirroring = Vector2(740, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background"]
 position = Vector2(63, -390)
-scale = Vector2(779, 351)
+scale = Vector2(779, 480)
 texture = ExtResource("2_nc4ef")
 region_enabled = true
 region_filter_clip_enabled = true
@@ -569,6 +569,7 @@ motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(740, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/some shit"]
+light_mask = 3
 position = Vector2(439, -367)
 scale = Vector2(1.29861, 1)
 texture = ExtResource("3_mle5c")
