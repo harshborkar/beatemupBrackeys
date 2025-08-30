@@ -2,7 +2,8 @@ class_name Player
 extends Character
 @onready var enemy_slots: Array = $EnemySlots.get_children()
 @onready var animation_player_mc: AnimationPlayer = $AnimationPlayer
-@onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
+
+@onready var health_bar: TextureProgressBar = $CanvasLayer/health_bar
 
 func handle_input(_delta)->void:
 	
