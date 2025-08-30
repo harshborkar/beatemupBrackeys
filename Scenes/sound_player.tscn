@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://h0igaddxl6qh"]
 
 [ext_resource type="AudioStream" uid="uid://d08w5o1pe5iwc" path="res://Assets/Music/SFX/body_hit_small_11.wav" id="1_h0qrl"]
-[ext_resource type="Script" uid="uid://bedqxerpf6mbv" path="res://Scripts/sound_manager.gd" id="1_m00wa"]
+[ext_resource type="Script" path="res://Scripts/sound_manager.gd" id="1_m00wa"]
 [ext_resource type="AudioStream" uid="uid://2ok2543u5o4g" path="res://Assets/Music/SFX/body_hit_finisher_42.wav" id="2_m00wa"]
 [ext_resource type="AudioStream" uid="uid://bno2nbyg3y4wf" path="res://Assets/Music/SFX/punch_short_whoosh_30.wav" id="3_oev1h"]
 [ext_resource type="AudioStream" uid="uid://carxycrwhu6kt" path="res://Assets/Music/SFX/metal_punch_06.wav" id="5_oev1h"]

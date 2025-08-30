@@ -2,61 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddgbqwahaynap" path="res://Scripts/cards.gd" id="1_4ll3t"]
 [ext_resource type="Shader" uid="uid://m4b2vunmrx6u" path="res://Shader/cards.gdshader" id="1_eomap"]
-[ext_resource type="Texture2D" uid="uid://cuwq7mrgydhgt" path="res://Assets/Cards/Temp/pixelCards/CuteCardsPixel_outline.png" id="1_xdaph"]
-
-[sub_resource type="Animation" id="Animation_4ll3t"]
-resource_name = "Flip"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.466667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(14, 2), Vector2i(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.520752, 0.833333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.02, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fb33y"]
-resource_name = "Flip_Again"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.48, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.025, 1), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame_coords")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.466667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(14, 2)]
-}
+[ext_resource type="Texture2D" uid="uid://b3mygarm641va" path="res://Assets/Cards/Cards_Combined_Spritesheet.png" id="3_eomap"]
 
 [sub_resource type="Animation" id="Animation_eomap"]
 length = 0.001
@@ -84,6 +30,84 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_fb33y"]
+resource_name = "Flip_Again"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.48, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.025, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(14, 2), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ll3t"]
+resource_name = "Flip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.518554),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(14, 2), Vector2i(0, 0), Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.520752, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.02, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.514876),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fb33y"]
 _data = {
@@ -98,8 +122,8 @@ shader_parameter/debug = true
 shader_parameter/border_scale = 0.665
 shader_parameter/shadow_offset = Vector2(0, -100)
 shader_parameter/color = Color(0, 0, 0, 1)
-shader_parameter/blur_amount = 2.49
-shader_parameter/shadow_scale = 1.5
+shader_parameter/blur_amount = 0.0
+shader_parameter/shadow_scale = 1.505
 shader_parameter/disable_rotating = false
 shader_parameter/fov = 90.0
 shader_parameter/cull_back = false
@@ -129,12 +153,13 @@ speed_scale = 2.548
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_eomap")
 position = Vector2(0, -18)
-texture = ExtResource("1_xdaph")
-hframes = 15
-vframes = 4
-frame = 44
+texture = ExtResource("3_eomap")
+hframes = 3
+vframes = 9
+frame = 1
 
 [node name="Mouse Area" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse Area"]
 position = Vector2(0, -18)
