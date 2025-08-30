@@ -1,7 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8j8rhtotwsp8"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://0xac8kjjx5r2" path="res://Assets/UI/Health/standard-empty-2.png" id="2_wjrfg"]
 [ext_resource type="Texture2D" uid="uid://b0wii376kk6ki" path="res://Assets/UI/Health/standard-2.png" id="3_ap322"]
+=======
+[ext_resource type="Texture2D" uid="uid://enqyl548wugc" path="res://Assets/UI/standard-empty-2.png" id="2_wjrfg"]
+[ext_resource type="Texture2D" uid="uid://c35br45rv7vwi" path="res://Assets/UI/standard-2.png" id="3_ap322"]
+>>>>>>> Stashed changes
 
 [node name="TextureProgressBar" type="TextureProgressBar"]
 anchors_preset = 15
@@ -9,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 92.0
+value = 100.0
 texture_over = ExtResource("2_wjrfg")
 texture_progress = ExtResource("3_ap322")
 texture_progress_offset = Vector2(0.19, 0)
