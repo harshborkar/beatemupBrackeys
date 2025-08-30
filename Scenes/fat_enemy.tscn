@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=15 format=3 uid="uid://cdl7klbnhh4t6"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://7sdavge4ko7t"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://6pwen3anoin6" path="res://Scripts/enemy.gd" id="1_skhp1"]
 [ext_resource type="Texture2D" uid="uid://bgvls87vs3meq" path="res://Assets/Enemy/Enemy2/Fenemy_Combined_Spritesheet.png" id="2_skhp1"]
