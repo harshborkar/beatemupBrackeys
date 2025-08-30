@@ -55,6 +55,7 @@ func on_recieve_damage(damage:int, direction:Vector2):
 		#queue_free()
 	else:
 		# Set knockback velocity and state
+		SoundPlayer.play(SoundManager.SOUND.PUNCH, true)
 		knockback_velocity = knockback_intensity * direction
 		state = STATE.HURT
 		handle_animations()

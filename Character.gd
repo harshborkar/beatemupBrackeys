@@ -100,11 +100,14 @@ func on_action_completed()->void:
 	handle_animations()
 
 func on_recieve_damage(damage:int, direction:Vector2):
+	
 	current_health = clamp(current_health - damage, 0, MAX_HEALTH) 
 	if current_health <= 0:
+		SoundPlayer.play(SoundManager.SOUND.PUNCH_FINAL, true)
 		state=STATE.DEATH
 		#queue_free()
 	else:
+		SoundPlayer.play(SoundManager.SOUND.PUNCH, true)
 		# Set knockback velocity and state
 		knockback_velocity = knockback_intensity * direction
 		state = STATE.HURT

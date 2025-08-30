@@ -23,6 +23,7 @@ func flash_hit(duration: float = 0.12) -> void:
 
 func receive_damage(damage: int, direction: Vector2) -> void:
 	flash_hit()
+	SoundPlayer.play(SoundManager.SOUND.PUNCH_METAL, true)
 	HEALTH -= damage
 
 	# --- knockback ---
