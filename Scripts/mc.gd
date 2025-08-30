@@ -33,7 +33,7 @@ func reserve_slot(enemy:Basic_Enemy)->EnemySlot:
 	)
 	available_slots[0].occupy(enemy)
 	return available_slots[0]
-	
+
 func free_slot(enemy:Basic_Enemy)->void:
 	var target_slot := enemy_slots.filter(
 		func(slot: EnemySlot):return slot.occupant ==enemy
