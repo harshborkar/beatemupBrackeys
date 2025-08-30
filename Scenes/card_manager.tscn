@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=17 format=3 uid="uid://bj4or5rqy1gsg"]
 
 [ext_resource type="Script" uid="uid://215giswaekg3" path="res://Scripts/card_manager.gd" id="1_pikqg"]
@@ -7,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://b3mygarm641va" path="res://Assets/Cards/Cards_Combined_Spritesheet.png" id="4_dyqno"]
 =======
 [ext_resource type="Texture2D" path="res://Assets/Cards/Cards_Combined_Spritesheet.png" id="4_dyqno"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=11 format=3 uid="uid://bj4or5rqy1gsg"]
+
+[ext_resource type="Script" uid="uid://215giswaekg3" path="res://Scripts/card_manager.gd" id="1_pikqg"]
+[ext_resource type="Script" uid="uid://ddgbqwahaynap" path="res://Scripts/cards.gd" id="2_w6ora"]
+[ext_resource type="Shader" uid="uid://m4b2vunmrx6u" path="res://Shader/cards.gdshader" id="3_bdei6"]
+[ext_resource type="Texture2D" uid="uid://pt3qut7hniau" path="res://Assets/Cards/Cards_Combined_Spritesheet.png" id="4_w6ora"]
 >>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_4ll3t"]
@@ -18,10 +27,17 @@ tracks/0/path = NodePath(".:frame_coords")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+<<<<<<< Updated upstream
 "times": PackedFloat32Array(0, 0.466667, 0.518554),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2i(14, 2), Vector2i(0, 0), Vector2i(0, 0)]
+=======
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(14, 2), Vector2i(0, 0)]
+>>>>>>> Stashed changes
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,6 +51,7 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.02, 1), Vector2(1, 1)]
 }
+<<<<<<< Updated upstream
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -47,6 +64,8 @@ tracks/2/keys = {
 "update": 1,
 "values": [1, 0]
 }
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_fb33y"]
 resource_name = "Flip_Again"
@@ -72,7 +91,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.466667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
+<<<<<<< Updated upstream
 "values": [Vector2i(0, 0), Vector2i(1, 0)]
+=======
+"values": [Vector2i(0, 0), Vector2i(14, 2)]
+>>>>>>> Stashed changes
 }
 
 [sub_resource type="Animation" id="Animation_eomap"]
@@ -101,6 +124,7 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+<<<<<<< Updated upstream
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -113,6 +137,8 @@ tracks/2/keys = {
 "update": 1,
 "values": [1]
 }
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fb33y"]
 _data = {
@@ -122,13 +148,22 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eomap"]
+<<<<<<< Updated upstream
 shader = ExtResource("3_fua0e")
+=======
+shader = ExtResource("3_bdei6")
+>>>>>>> Stashed changes
 shader_parameter/debug = true
 shader_parameter/border_scale = 0.665
 shader_parameter/shadow_offset = Vector2(0, -100)
 shader_parameter/color = Color(0, 0, 0, 1)
+<<<<<<< Updated upstream
 shader_parameter/blur_amount = 0.0
 shader_parameter/shadow_scale = 1.505
+=======
+shader_parameter/blur_amount = 2.49
+shader_parameter/shadow_scale = 1.5
+>>>>>>> Stashed changes
 shader_parameter/disable_rotating = false
 shader_parameter/fov = 90.0
 shader_parameter/cull_back = false
@@ -144,6 +179,7 @@ shader_parameter/mouse_screen_pos_test = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ll3t"]
 size = Vector2(22, 33)
+<<<<<<< Updated upstream
 
 [sub_resource type="Animation" id="Animation_w6ora"]
 resource_name = "Flip"
@@ -275,6 +311,8 @@ shader_parameter/mouse_screen_pos_test = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ev4nm"]
 size = Vector2(22, 33)
+=======
+>>>>>>> Stashed changes
 
 [node name="Card Manager" type="Node2D"]
 script = ExtResource("1_pikqg")
@@ -282,6 +320,7 @@ script = ExtResource("1_pikqg")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4.68, 4.68)
 
+<<<<<<< Updated upstream
 [node name="Blue1" type="Node2D" parent="."]
 scale = Vector2(0.09, 0.09)
 script = ExtResource("2_bdei6")
@@ -538,6 +577,8 @@ visible = false
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_ev4nm")
 
+=======
+>>>>>>> Stashed changes
 [node name="Button" type="Button" parent="."]
 offset_left = -18.0
 offset_top = -66.0
@@ -545,6 +586,7 @@ offset_right = 43.0
 offset_bottom = -35.0
 text = "Refuse"
 
+<<<<<<< Updated upstream
 [connection signal="mouse_entered" from="Blue1/Mouse Area" to="Blue1" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Blue1/Mouse Area" to="Blue1" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Blue2/Mouse Area" to="Blue2" method="_on_area_2d_mouse_entered"]
@@ -563,4 +605,249 @@ text = "Refuse"
 [connection signal="mouse_exited" from="Red2/Mouse Area" to="Red2" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="Red3/Mouse Area" to="Red3" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Red3/Mouse Area" to="Red3" method="_on_area_2d_mouse_exited"]
+=======
+[node name="Blue" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blue"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Blue"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Blue"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Blue2" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blue2"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Blue2"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Blue2"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue2/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Blue3" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blue3"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Blue3"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Blue3"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blue3/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Green1" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Green1"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Green1"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Green1"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green1/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Green2" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Green2"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Green2"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Green2"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green2/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Green3" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Green3"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Green3"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Green3"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Green3/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Red1" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Red1"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Red1"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Red1"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red1/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Red2" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Red2"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Red2"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Red2"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red2/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+[node name="Red3" type="Node2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.105, 0.105)
+script = ExtResource("2_w6ora")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Red3"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_fb33y")
+}
+speed_scale = 2.548
+
+[node name="Sprite2D" type="Sprite2D" parent="Red3"]
+material = SubResource("ShaderMaterial_eomap")
+position = Vector2(0, -18)
+texture = ExtResource("4_w6ora")
+hframes = 3
+vframes = 9
+
+[node name="Mouse Area" type="Area2D" parent="Red3"]
+scale = Vector2(17.03, 17.03)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Red3/Mouse Area"]
+shape = SubResource("RectangleShape2D_4ll3t")
+
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Blue/Mouse Area" to="Blue" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Blue/Mouse Area" to="Blue" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Blue2/Mouse Area" to="Blue2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Blue2/Mouse Area" to="Blue2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Blue3/Mouse Area" to="Blue3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Blue3/Mouse Area" to="Blue3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Green1/Mouse Area" to="Green1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Green1/Mouse Area" to="Green1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Green2/Mouse Area" to="Green2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Green2/Mouse Area" to="Green2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Green3/Mouse Area" to="Green3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Green3/Mouse Area" to="Green3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Red1/Mouse Area" to="Red1" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Red1/Mouse Area" to="Red1" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Red2/Mouse Area" to="Red2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Red2/Mouse Area" to="Red2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Red3/Mouse Area" to="Red3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Red3/Mouse Area" to="Red3" method="_on_area_2d_mouse_exited"]

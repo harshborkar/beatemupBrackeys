@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://b3mygarm641va"
+=======
+uid="uid://pt3qut7hniau"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Cards_Combined_Spritesheet.png-ccb58ad3ee1e636eb5f0f72a70963e21.ctex"
 metadata={
 "vram_texture": false

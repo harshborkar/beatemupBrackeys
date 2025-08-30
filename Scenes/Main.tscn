@@ -5,7 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cgbsbqlhj6lla" path="res://Scenes/enemy.tscn" id="3_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://bwsrbpnfqffvu" path="res://Scenes/Barrel.tscn" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://biynfh7n3obul" path="res://Scenes/MC.tscn" id="5_pbw6q"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://cdl7klbnhh4t6" path="res://Scenes/fat_enemy.tscn" id="6_v1gob"]
+=======
+[ext_resource type="PackedScene" uid="uid://b7w4n32230hh0" path="res://Scenes/fat_enemy.tscn" id="6_v1gob"]
+>>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c1w88"]
 normal = Vector2(-0.0212718, 0.999774)
@@ -128,3 +132,10 @@ MAX_HEALTH = 100
 position = Vector2(34, 0)
 scale = Vector2(0.40625, 0.40625)
 collision_mask = 0
+<<<<<<< Updated upstream
+=======
+
+[node name="FatEnemy" parent="Actors" node_paths=PackedStringArray("player") instance=ExtResource("6_v1gob")]
+position = Vector2(-28, 0)
+player = NodePath("../MC")
+>>>>>>> Stashed changes
