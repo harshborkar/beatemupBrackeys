@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmmajc47xnbwl"]
+[gd_scene load_steps=14 format=3 uid="uid://by0hhfs86mqi4"]
 
 [ext_resource type="Texture2D" uid="uid://b6q642q65opki" path="res://Assets/Background/Streets of Fight files/Assets/Stage Layers/tileset.png" id="1_gyy0t"]
 [ext_resource type="Texture2D" uid="uid://d3puyew6p7llw" path="res://Assets/Background/Streets of Fight files/Assets/Stage Layers/props/car.png" id="2_tlae6"]
