@@ -1,7 +1,11 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=15 format=3 uid="uid://cdl7klbnhh4t6"]
 =======
 [gd_scene load_steps=15 format=3 uid="uid://7sdavge4ko7t"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=15 format=3 uid="uid://c46gdpm1xsr0b"]
 >>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://6pwen3anoin6" path="res://Scripts/enemy.gd" id="1_skhp1"]
